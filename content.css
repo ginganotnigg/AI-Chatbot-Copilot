@@ -1,0 +1,52 @@
+/*
+* TEXT SELECTIONS
+*/
+
+#side_icon_container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateY(50vh);
+    cursor: pointer;
+    opacity: 60%; 
+}
+
+#side_icon_container .icon_btn {
+    width: auto;
+    height: auto;
+    background-color: aqua;
+    padding: 7px;
+    border-radius: 10px 0 0 10px;
+}
+
+#side_icon_container .icon_btn:is(:hover, .selected) {
+    opacity: 100%;
+}
+
+#side_icon_container .icon {
+    background-image: url("assets/icon.svg");
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+}
+
+#side_window_container {
+    position: absolute;
+    z-index: 1111;
+    right: 0;
+    top: 5px;
+    width: 40vw;
+    height: calc(100vh - 10px);
+    display: flex;
+    background-color: lightcoral;
+    flex-direction: column;
+}
+
+#side_window_container button {
+    width: 100px;
+    height: 40px;
+    background-color: maroon;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+}

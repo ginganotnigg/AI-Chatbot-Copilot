@@ -8,10 +8,9 @@ const updatePopup = (result) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM is loaded!");
-    let getBtn = document.getElementById("btn");
-    getBtn.addEventListener("click", () => {
-        chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, {from: "popup", subject: "get_input"}, updatePopup);
-        });
-    });
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.executeScript(
+            tabs[0].id,
+            { files: ['content.js'] }
+    )});
 });

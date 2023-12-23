@@ -1,8 +1,14 @@
-console.log('I am background!');
+/*
+* TEXT SELECTIONS
+*/
 
-chrome.runtime.onMessage.addListener((msg, sender) => {
-    // First, validate the message's structure.
-    if (msg.from === "content" && msg.subject === "show_page_action") {
-        console.log(sender.tab.id);
-    }
-});
+/*try {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.executeScript(
+            tabs[0].id,
+            { files: ['content.js'] }
+    )});
+}
+catch (e) {
+    console.log(e);
+} */
