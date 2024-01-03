@@ -1,37 +1,38 @@
 {
-    "name": "Bbond AI Copilot",
-    "version": "1.0",
-    "manifest_version": 3,
-    "description": "Extension to upgrade your writing!",
-    "background": {
-        "service_worker": "background.js"
-    },
-    "action": {
-        "default_title": "Bbond",
-        "default_icon": "/assets/icon-48.png",
-        "default_popup": "index.html"
-    },
-    "permissions": [
-        "tabs", "scripting", "activeTab", "storage", "contextMenus"
-    ],
-    "icons": {
-        "16": "assets/icon-16.png",
-        "48": "assets/icon-48.png",
-        "128": "assets/icon-128.png"
-    },
-    
-    "content_scripts": [
-        {
-            "matches": ["http://*/*", "https://*/*"],
-            "js": ["content.js"],
-            "css": ["content.css"]
-        }
-    ],
-    "host_permissions": [
-        "<all_urls>",
-        "https://*/*"
-    ],
-    "content_security_policy": {
-        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
-    }
+	"name": "Bbond AI Copilot",
+	"version": "1.0",
+	"manifest_version": 3,
+	"description": "Extension to upgrade your writing!",
+	"background": {
+		"service_worker": "background.js"
+	},
+	"action": {
+		"default_title": "Bbond",
+		"default_icon": "/assets/icon-48.png",
+		"default_popup": "index.html"
+	},
+	"permissions": [
+		"tabs",
+		"scripting",
+		"activeTab",
+		"storage",
+		"contextMenus"
+	],
+	"icons": {
+		"16": "assets/icon-16.png",
+		"48": "assets/icon-48.png",
+		"128": "assets/icon-128.png"
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["content.js"],
+			"css": ["content.css"]
+		}
+	],
+	"host_permissions": ["<all_urls>", "https://*/*"],
+	"content_security_policy": {
+		"extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+	}
 }
