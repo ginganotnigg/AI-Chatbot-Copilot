@@ -2,7 +2,6 @@
 * TEXT SELECTIONS
 */
 
-
 chrome.contextMenus.create({
     id: "revise",
     title: "Revise",
@@ -23,6 +22,7 @@ chrome.contextMenus.create({
     title: "Summarize",
     contexts: ["selection"], 
 });
+isCreated = true;
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
     if (info.menuItemId === "revise") {

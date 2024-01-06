@@ -1,134 +1,142 @@
-/** @format */
-
 @font-face {
-	font-family: "Roboto";
-	src: url(/font/roboto.ttf);
+    font-family: "Roboto";
+    src: url(/font/roboto.ttf);
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
-	/* Text */
-	font-family: "Roboto";
+    /* Text */
+    font-family: "Roboto";
 }
 
 :root {
-	--main-bg-color: transparent;
-	--main-text-color: transparent;
+    --main-bg-color: transparent;
+    --main-text-color: transparent;
 }
 
 .title {
-	margin: 10px auto;
+    margin: 10px auto;
 }
 
 .textures {
-	display: none;
+    display: none;
 }
+
 
 /*
 * POPUP WINDOW
 */
 
 #popup_window {
-	display: flex;
-	flex-direction: column;
-	width: 350px;
-	height: auto;
-	padding: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: auto;
+    padding: 5px;
 
-	background-color: var(--main-bg-color);
+    background-color: var(--main-bg-color);
 }
 
 #popup_window .title {
-	color: var(--main-text-color);
+    color: var(--main-text-color);
 }
 
 .center {
 	margin: auto;
 }
 
+
+
 #settings {
-	flex-direction: column;
+    flex-direction: column;
 }
 
 #settings div {
-	display: flex;
-	margin: 10px;
+    display: flex;
+    margin: 10px;
 }
 
 #settings div:first-child {
-	margin-bottom: 13px;
+    margin-bottom: 13px;
 }
 
 #popup_window label:not([class]) {
-	margin: auto 0;
-	margin-right: auto;
-	align-items: center;
+    margin: auto 0;
+    margin-right: auto;
+    align-items: center;
 
-	font-size: 13px;
-	color: var(--main-text-color);
+    font-size: 13px;
+    color: var(--main-text-color);
 }
 
-#popup_window select,
-input {
-	width: 150px;
-	padding: 1px 0;
-	border: 1px solid var(--main-text-color);
-	color: var(--main-text-color);
+#popup_window select, input {
+    width: 150px;
+    padding: 1px 0;
+    border: 1px solid var(--main-text-color);
+    color: var(--main-text-color);
 }
 
 #popup_window input {
-	padding: 2px 5px;
+    padding: 2px 5px;
 }
 
 #popup_window p {
-	font-size: 10px;
-	opacity: 0.6;
-	text-align: justify;
-	color: var(--main-text-color);
-	margin: 10px;
+    font-size: 10px;
+    opacity: 0.6;
+    text-align: justify;
+    color: var(--main-text-color);
+    margin: 10px;
 }
 
 #popup_window button {
-	width: 60px;
-	height: 30px;
-	background-color: var(--main-text-color);
-	color: white;
-	cursor: pointer;
-	border-radius: 10px;
+    width: 60px;
+    height: 30px;
+    background-color: var(--main-text-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+#popup_window button:is(:hover, .selected) {
+    transform: translateY(-2px);
+    filter: brightness(120%);
 }
 
 #popup_window .toggle {
-	position: relative;
-	display: inline-block;
-	width: 32px;
-	height: 16px;
-	background-color: gray;
-	border-radius: 14px;
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+    background-color: gray;
+    border-radius: 14px;
 }
-
+       
 #popup_window .toggle::after {
-	content: "";
-	position: absolute;
-	width: 14px;
-	height: 14px;
-	border-radius: 50%;
-	top: 1px;
-	left: 1px;
-	background-color: white;
-	transition: 0.5s;
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    background-color: white;
+    transition: 0.5s;
 }
-
+       
 #popup_window .switch:checked + .toggle::after {
-	left: 17px;
+    left: 17px;
 }
-
+       
 #popup_window .switch:checked + .toggle {
-	background-color: var(--main-text-color);
+    background-color: var(--main-text-color);
+}
+       
+#popup_window .switch {
+    display: none;
 }
 
-#popup_window .switch {
-	display: none;
-}
+
