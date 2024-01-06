@@ -69,9 +69,16 @@ function revise(context, promptText, apikey) {
 //OFFER HELP
 //use when put in chat box
 function offerhelp(promptText, apikey) {
-    const revisePrompt = "Offer me help on translating, rewriting or summarizing the following: " + promptText;
-    return getCompletion(revisePrompt,apikey);
+    const offerPrompt = "Offer me help on translating, rewriting or summarizing the following: " + promptText;
+    return getCompletion(offerPrompt,apikey);
 }
 //TEST FOR OFFER HELP
 // offerhelp("Hi how are you", "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")
 // .then(test=>console.log(test));
+
+//TEST
+//use in the need the check valid/usable key
+function checkValid(apikey) {
+    const testPrompt = "Hi, reply me.";
+    return getCompletion(testPrompt,apikey);
+}
