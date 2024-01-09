@@ -2,23 +2,8 @@
 * TEXT SELECTIONS
 */
 
-@keyframes slide_left {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 :root {
-    --main-bg-color: lightpink;
+    --main-bg-color: lightcoral;
     --main-text-color: maroon;
 }
 
@@ -49,10 +34,6 @@
     height: 24px;
 }
 
-#side_window_container * {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 #side_window_container {
     position: absolute;
     z-index: 2147483647;
@@ -71,23 +52,7 @@
     flex-direction: column;
     border-radius: 10px;
     border: 2px solid white;
-    box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
-    animation: slide_left 0.5s ease-in;
-}
-
-#side_window_container .side_window.hide {
-    transform: translateX(100%);
-    transition: transform 0.5s ease-out;
-}
-
-#side_window_container .title {
-    font-weight: 700;
-    font-size: 24px;
-    background-image: linear-gradient(to left, rgba(179, 51, 108, 0.9) 0%, var(--main-text-color) 50%, rgba(60, 169, 186, 0.9) 100%);
-    background-clip: text;
-    -webkit-text-stroke-color: white;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    padding: 10px;
 }
 
 #side_window_container button {
@@ -97,13 +62,6 @@
     color: white;
     cursor: pointer;
     border-radius: 10px;
-    transition: transform 0.3s, filter 0.3s;
-    letter-spacing: calc(1em / 24);
-}
-
-#side_window_container button:is(:hover, .selected) {
-    transform: translateY(-2px);
-    filter: brightness(120%);
 }
 
 .side_window .header {
@@ -111,7 +69,6 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px;
 }
 
 .header .hide {
@@ -125,108 +82,55 @@
     justify-content: center;
     border-radius: 10px;
     margin: 5px;
-    overflow-y: auto;
+}
+
+.chat .content_show {
+    overflow-y: scroll;
+}
+
+.chat .text_chat {
+    width: 80vw;
+    height: 30px;
+    margin: auto;
+    padding: 3px 5px;
 }
 
 .content_show .chat_line {
-    display: flex;
+    text-align: left;
     font-size: 15px;
-    word-wrap: break-word;
-    
-    letter-spacing: calc(1em / 24);
-    line-height: 20px;
+    margin: 3px 3px;
+    padding: 3px 15px;
 
-    color: white;
-    
-}
-
-.content_show .user {
-    justify-content: flex-end;
-}
-
-.user p {
-    margin: 1vw;
-    margin-left: 6vw;
-    padding: 6px 12px;
-    background-color: var(--main-text-color);
-    border-radius: 10px 0 10px 10px;
-}
-
-.content_show .AI {
-    justify-content: flex-start;
-}
-
-.AI p {
-    margin: 2vw;
-    margin-right: 6vw;
-    padding: 5px 15px;
-    background-image: linear-gradient(to left, rgba(179, 51, 108, 0.9), rgba(60, 169, 186, 0.9));
-	border: 2px solid var(--main-text-color);
-    border-radius: 0 10px 10px 10px;
-}
-
-.chat_line.AI .icon {
-    width: 30px;
-    height: 30px;
-    animation: spin 1.25s linear 4;
-}
-
-.footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
-    margin: 2px;
-    border-radius: 0.5rem;
-    margin-top: auto;
-}
-
-.footer .text_chat {
-	width: calc(100% - 80px);
-	height: 30px;
-    margin: 0 1px;
-    resize: none;
-    border: none;
-    outline: none;
-    background: transparent;
-
-}
-
-.footer .text_chat::-webkit-scrollbar {
-    display: none;
-}
-
-.footer .send_button {
-    margin-left: auto;
+    /* Color */
+    background-image: linear-gradient(to left, rgba(247, 207, 225, 0.6), rgba(186, 237, 245, 0.6));
+    border: 1px solid #bbb;
+    border-radius: 15vh 15vh 15vh 0;
 }
 
 #select_popup_container {
-	position: absolute;
-	pointer-events: none;
-}
-
-#select_popup_container .popup {
-	width: auto;
-	height: auto;
-	overflow-wrap: break-word;
-	background-color: var(--main-bg-color);
-}
-
-
-
-/*
-* INPUT ACTIONS
-*/
-
-#input_icon_container {
-    position: relative;
-    cursor: pointer;
-}
-
-#input_icon_container .icon {
-    position: absolute;
+    position: fixed;
     z-index: 2147483647;
-    width: 24px;
-    height: 24px;
+    pointer-events: none;
+    background-color: maroon;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#select_popup_container .action_popup {
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#select_popup_container .text_popup {
+    overflow-wrap: break-word;
+    background-color: lightcoral;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+    max-width: 400px;
 }
